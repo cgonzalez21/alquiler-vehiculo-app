@@ -487,7 +487,7 @@ iframe {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #403866;
+    background-color: #827ffe;
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -496,7 +496,7 @@ iframe {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.save-form-btn:hover {
+.save-btn:hover {
     background-color: #403866;
 }
 
