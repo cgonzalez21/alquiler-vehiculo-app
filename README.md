@@ -15,6 +15,7 @@ npm install
 
 ## Usage
 
+Use the package manager [ng](https://angular.io/cli) to start the project.
 ```angular
 ng serve 
 ```
