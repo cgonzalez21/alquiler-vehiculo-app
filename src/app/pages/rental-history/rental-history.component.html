@@ -1,0 +1,45 @@
+<table *ngIf="!charging && rentHistory.length > 0" class="table mt-3 animated faster animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Distrito</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Marca de Auto</th>
+            <th scope="col">Modelo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let h of rentHistory; let i = index;">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ h.nombre }}</td>
+            <td>{{ h.apellido}}</td>
+            <td>{{ h.cedula }}</td>
+            <td>{{ h.correo }}</td>
+            <td>{{ h.distrito }}</td>
+            <td>{{ h.ciudad }}</td>
+            <td>{{ h.marca }}</td>
+            <td>{{ h.modelo }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!charging && rentHistory.length === 0" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="charging" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fas fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>

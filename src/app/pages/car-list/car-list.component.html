@@ -1,0 +1,55 @@
+<table *ngIf="!charging && cars.length > 0" class="table mt-3 animated fadeInfaster animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Auto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Capacidad</th>
+            <th scope="col">Puertas</th>
+            <th scope="col">Disponible</th>
+            <th scope="col">Solicitar</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let car of cars; let i = index">
+            <th scope="row">{{ i + 1 }}
+            </th>
+            <td>
+                <div *ngIf="car.img != ''">
+                    <img [src]="car.img" class="rounded img-fluid img-thumbnail">
+                </div>
+            </td>
+            <td>{{ car.marca }}</td>
+            <td>{{ car.modelo }}</td>
+            <td>{{ car.personas }}</td>
+            <td>{{ car.puertas }}</td>
+            <td>
+                <label *ngIf="car.disponible" class="badge badge-success">Disponible</label>
+                <label *ngIf="!car.disponible" class="badge badge-danger">No Disponible</label>
+            </td>
+            <td>
+                <button [disabled]="!car.disponible" class="btn btn-info" [routerLink]="['/rentalCar', car.id, car.modelo, car.marca ]">
+                  <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!charging && cars.length === 0" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="charging" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fas fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>

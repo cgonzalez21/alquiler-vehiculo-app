@@ -1,0 +1,35 @@
+<div class="limiter animated fadeInLeft p-t-50">
+    <h1 class="home-title">Alquiler de Vehiculos</h1>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-4 text-left">
+            <button [disabled]="carList" class="save-btn" (click)="rentCar()">
+                <i class="fas fa-car"></i>
+                Alquilar Auto
+            </button>
+        </div>
+
+        <div class="col-4 text-center">
+            <button [disabled]="!carList" class="save-btn" (click)="rentalHistory()">
+                <i class="fas fa-history"></i>
+                Ver Historial
+            </button>
+        </div>
+
+        <div class="col-4 text-right">
+            <button class="save-btn" (click)="logOut()">
+                <i class="fas fa-sign-out-alt"></i>
+                Cerrar sesión
+            </button>
+        </div>
+    </div>
+    <div *ngIf="carList">
+        <app-car-list></app-car-list>
+    </div>
+
+    <div *ngIf="rentHistory">
+        <app-rental-history></app-rental-history>
+    </div>
+</div>
