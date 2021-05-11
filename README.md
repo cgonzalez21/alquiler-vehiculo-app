@@ -1,9 +1,20 @@
 # AlquilerVehiculoApp
+This project is about basic and simple rental car application.
 
-Para iniciar con la aplicación:
+## Installation
 
-1. Ejecutar instalación de dependencias con el comando:
-npm install
+Use the package manager git to install the project.
+```bash
+git clone url-project 
+```
 
-2. Luego iniciar el proyecto con el comando:
-ng serve
+Use the package manager npm to install the dependencies of the project.
+```bash
+npm install 
+```
+
+## Usage
+
+```angular
+ng serve 
+```
